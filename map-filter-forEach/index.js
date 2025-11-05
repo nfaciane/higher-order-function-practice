@@ -148,7 +148,15 @@ Prompt #5
 Use the native filter method to return a new array of the film objects who have Kurt Russell in the cast.
 */
 
-let kurtRussell;
+let kurtRussell = films.filter(function(film) {
+  //loop thru cast array
+  for(let i = 0; i < cast.length; i++){
+    //return if true film's casting Kurt Russell
+    film.cast[i].name === "Kurt Russell";
+  }
+    return film;
+})
+console.log(kurtRussell);
 
 /*
 Prompt #6
@@ -157,5 +165,8 @@ cast member (top billed cast member will be the first cast member in the cast ar
 */
 
 let mappedWithCastMember = films.map(function(film){
-
+//return new array of strings incuding film title and top-billed cast member 
+                            //located at object.title  //located at object.cast[0].name
+    return film.title + ", " + film.cast[0].name;
 })
+//console.log(mappedWithCastMember);
