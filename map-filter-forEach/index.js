@@ -148,14 +148,30 @@ Prompt #5
 Use the native filter method to return a new array of the film objects who have Kurt Russell in the cast.
 */
 
+//Answer using .filter method and for loop
+// let kurtRussell = films.filter(function(film) {
+//   //loop thru cast array
+//   for(let i = 0; i < film.cast.length; i++){
+//     //return if true film's casting Kurt Russell
+//     if(film.cast[i].name === "Kurt Russell"){
+//       return true;
+//     };
+//   }
+   
+// })
+
+//Answer using filter method and filter method and .length property
 let kurtRussell = films.filter(function(film) {
-  //loop thru cast array
-  for(let i = 0; i < cast.length; i++){
-    //return if true film's casting Kurt Russell
-    film.cast[i].name === "Kurt Russell";
-  }
-    return film;
-})
+  //return if true film objects casting Kurt Russell
+    //return array element film.object key cast
+  return film.cast.filter(function(castMember){
+    //return cast array element castMember, name key value is Kurt Russell
+    return castMember.name === "Kurt Russell";
+    //.length; after filter function to ensure return ONLY if true
+  }).length;
+   
+});
+
 console.log(kurtRussell);
 
 /*
