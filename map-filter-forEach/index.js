@@ -88,7 +88,21 @@ Use the native filter method to return a new array of the film
 objects that were directed by Alfred Hitchcock.
 */
 
-let hitchcock;
+/*
+I: intake array of film objects and cast arrays
+O:
+C:
+E:
+*/
+
+//synatx for follow for each prompt//
+    // arrayName.filter(){}
+    // arrayName.map(){}
+let hitchcock = films.filter(function(film){
+//return true if element film has director key value Alefred Hitchcock
+return film.director === 'Alred Hitchcock';
+})
+//console.log(hitchcock);
 
 /*
 Prompt #2
@@ -96,7 +110,11 @@ Use the native filter method to return a new array of the film objects
 that were made in the 1980s.
 */
 
-let eighties;
+let eighties = films.filter(function(film1980s){
+  //return true if element film1980 has year key value between 1980 and 1989
+  return film1980s.year <= 1989 && film1980s.year >= 1980;
+})
+//console.log(eighties);
 
 /*
 Prompt #3
@@ -107,7 +125,11 @@ example output:
 // ['Rear Window (1954)', 'The Thing (1982)', 'Vertigo (1958)', 'Fright Night (1985)']
 */
 
-let mappedStrings;
+let mappedStrings = films.map(function(filmTitle){
+  //return new aray of strings with object film's title and year
+  return filmTitle.title + " " + "(" + filmTitle.year + ")";
+})
+//console.log(mappedStrings);
 
 /*
 Prompt #4
@@ -115,7 +137,11 @@ Use the native filter method to return a new array of the film objects that have
 of 2.
 */
 
-let quantityTwo;
+let quantityTwo = films.filter(function(physicalMediaQ2){
+//return true if film object key physicalMedia, quantity key value is 2
+return physicalMediaQ2.physicalMedia.quantity === 2;
+})
+//console.log(quantityTwo);
 
 /*
 Prompt #5
@@ -130,4 +156,6 @@ Use the native map method to return a new array of strings of each film's title 
 cast member (top billed cast member will be the first cast member in the cast array).
 */
 
-let mappedWithCastMember;
+let mappedWithCastMember = films.map(function(film){
+
+})
